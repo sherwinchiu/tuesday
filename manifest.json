@@ -18,28 +18,18 @@
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
-<<<<<<< HEAD
             "128": "assets/img/128x128 logo.png",
             "48": "assets/img/48x48 logo.png",
             "16": "assets/img/16x16 logo.png"
-=======
-
->>>>>>> 120b80e (Update manifest.json add icons)
         }
     },
     "commands": {
 
     },
     "icons": {
-<<<<<<< HEAD
         "128": "assets/img/128x128 logo.png",
         "48": "assets/img/48x48 logo.png",
         "16": "assets/img/16x16 logo.png"
-=======
-        "128": "/img/128x128 logo.png",
-        "48": "/img/48x48 logo.png",
-        "16": "/img/16x16 logo.png"
->>>>>>> 120b80e (Update manifest.json add icons)
     },
     "options_page": "options.html"
 }
