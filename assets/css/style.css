@@ -11,8 +11,9 @@
     text-align: center;
 }
 .options {
-    position: relative;
-    top: 75px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
     display: block;
     width: 24px;
     padding: 2px;
