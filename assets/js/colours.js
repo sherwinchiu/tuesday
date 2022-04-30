@@ -43,6 +43,15 @@ function updateColours() {
   root.style.setProperty('--red', red);
   root.style.setProperty('--green', green);
   root.style.setProperty('--blue', blue);
+  root.style.setProperty('--inv-red', 255 - red);
+  root.style.setProperty('--inv-green', 255 - green);
+  root.style.setProperty('--inv-blue', 255 - blue);
   setTimeout(updateColours, 1);
 }
 updateColours();
+
+chrome.storage.sync.get(["bgCol", "txtCol"], (options) => {
+  let root = document.documentElement;
+  root.style.setProperty("--background-colour", options.bgCol);
+  root.style.setProperty("--colour", options.txtCol);
+});

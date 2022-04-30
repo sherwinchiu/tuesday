@@ -19,8 +19,6 @@ chrome.contextMenus.create({
  */
 chrome.contextMenus.onClicked.addListener((clicked) => {
     if(clicked.menuItemId == "tuesday-extension-add-date-to-calendar") {
-        console.log("unformated date:", clicked.selectionText)
-        console.log("date:", findDate(clicked.selectionText))
         chrome.storage.sync.set({"date": findDate(clicked.selectionText) }, () => {
             chrome.notifications.create("added",{
                 type: "basic",
@@ -28,6 +26,7 @@ chrome.contextMenus.onClicked.addListener((clicked) => {
                 title: "Added an Event",
                 message: `Added ${clicked.selectionText}`
             });
+            chrome.tabs.create({url: `https://calendar.google.com/calendar/u/0/r/eventedit?text=Your+Event+Name&dates=${findDate(clicked.selectionText)}/${parseInt(findDate(clicked.selectionText))+1}`})
         });
     } else if(clicked.menuItemId == "tuesday-extension-add-event-to-calendar") {
         chrome.storage.sync.set({"event": clicked.selectionText}, () => {

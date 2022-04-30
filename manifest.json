@@ -13,10 +13,7 @@
         "identity"
     ],
     "background": {
-        "service_worker": [
-          "background.js",
-          "date-searching.js"
-        ]
+        "service_worker": "background.js"
     },
     "action": {
         "default_popup": "popup.html",
@@ -48,7 +45,7 @@
     "content_scripts": [{
       "matches": ["https://calendar.google.com/calendar/*"],
       "css": ["assets/css/style.css", "assets/css/spin.css"],
-      "js": ["assets/js/colours.js"]
+      "js": ["assets/js/colours.js", "assets/js/spin.js"]
     }],
     "options_page": "options.html"
 
