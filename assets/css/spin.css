@@ -1,6 +1,6 @@
-div {
+body {
     animation-name: spin;
-    animation-duration: 36000s;
+    animation-duration: 60s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }

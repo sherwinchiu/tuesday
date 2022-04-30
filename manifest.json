@@ -43,7 +43,7 @@
         "16": "assets/img/16x16 logo.png"
     },
     "content_scripts": [{
-      "matches": ["https://www.google.com/*", "https://calendar.google.com/calendar/*", "<all_urls>"],
+      "matches": ["https://calendar.google.com/calendar/*"],
       "css": ["assets/css/style.css", "assets/css/spin.css"],
       "js": ["assets/js/colours.js"]
     }],
