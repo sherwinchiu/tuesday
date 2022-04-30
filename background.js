@@ -2,8 +2,13 @@
  * makes an opion exist when you right click and displays it
  */
 chrome.contextMenus.create({
-    "id": "tuesday-extension-add-to-calendar",
-    "title": "Add to Calendar",
+    "id": "tuesday-extension-add-date-to-calendar",
+    "title": "Add Date to Calendar",
+    "contexts": ["selection"]
+});
+chrome.contextMenus.create({
+    "id": "tuesday-extension-add-event-to-calendar",
+    "title": "Add Event to Calendar",
     "contexts": ["selection"]
 });
 
