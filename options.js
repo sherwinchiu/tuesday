@@ -23,16 +23,26 @@ const DECODE_BG = {
 }
 
 chrome.storage.sync.get(["spinSpeed", "bgCol"], (options) => {
-    speedSlider.value = options.spinSpeed;
+    if (options.spinSpeed === "0") {
+        speedSlider.value = 0;
+    } else {
+        speedSlider.value = 3600 - options.spinSpeed + 1;
+    }
     bgColourOptions.value = DECODE_BG[options.bgCol];
 });
 
 document.getElementById("set-options").addEventListener("click", () => {
     let root = document.documentElement;
     // spin speed
-    chrome.storage.sync.set({"spinSpeed": speedSlider.value}, () => {
-        root.style.setProperty("--spin-duration", `${speedSlider.value}s`);
-    });
+    if (speedSlider.value === "0") {
+        chrome.storage.sync.set({"spinSpeed": 0}, () => {
+            root.style.setProperty("--spin-duration", "0s");
+        });
+    } else {
+        chrome.storage.sync.set({"spinSpeed": 3600 - speedSlider.value + 1}, () => {
+            root.style.setProperty("--spin-duration", `${3600 - speedSlider.value + 1}s`);
+        });
+    }
 
     // background colour
     chrome.storage.sync.set({"bgCol": BG_COLS[bgColourOptions.value]}, () => {
