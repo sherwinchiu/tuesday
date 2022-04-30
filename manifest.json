@@ -9,14 +9,16 @@
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
-            // stick in 16, 48, 128 size icons
+
         }
     },
     "commands": {
-        // add keybind commands later
+
     },
     "icons": {
-        // stick in 16, 48, 128
+        "128": "/img/128x128 logo.png",
+        "48": "/img/48x48 logo.png",
+        "16": "/img/16x16 logo.png"
     },
     "options_page": "options.html"
 }
