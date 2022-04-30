@@ -1,0 +1,22 @@
+{
+    "name": "Tuesday",
+    "description": "only works on Tuesdays",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            // stick in 16, 48, 128 size icons
+        }
+    },
+    "commands": {
+        // add keybind commands later
+    },
+    "icons": {
+        // stick in 16, 48, 128
+    },
+    "options_page": "options.html"
+}
