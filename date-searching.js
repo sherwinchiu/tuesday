@@ -17,7 +17,7 @@ function findDate(text){
     let year;
 
     //checks through each filter
-    filter1Matches = text.match(filter);
+    let filterMatches = text.match(filter);
     if (filterMatches === null){
         return;
     }

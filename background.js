@@ -19,7 +19,9 @@ chrome.contextMenus.create({
  */
 chrome.contextMenus.onClicked.addListener((clicked) => {
     if(clicked.menuItemId == "tuesday-extension-add-date-to-calendar") {
-        chrome.storage.sync.set({"date": clicked.selectionText}, () => {
+        console.log("unformated date:", clicked.selectionText)
+        console.log("date:", findDate(clicked.selectionText))
+        chrome.storage.sync.set({"date": findDate(clicked.selectionText) }, () => {
             chrome.notifications.create("added",{
                 type: "basic",
                 iconUrl:"/assets/img/48x48 logo.png",
