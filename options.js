@@ -23,7 +23,7 @@ const DECODE_BG = {
 }
 
 chrome.storage.sync.get(["spinSpeed", "bgCol"], (options) => {
-    if (options.spinSpeed === 0) {
+    if (options.spinSpeed === "0") {
         speedSlider.value = 0;
     } else {
         speedSlider.value = 3600 - options.spinSpeed + 1;
@@ -34,7 +34,7 @@ chrome.storage.sync.get(["spinSpeed", "bgCol"], (options) => {
 document.getElementById("set-options").addEventListener("click", () => {
     let root = document.documentElement;
     // spin speed
-    if (speedSlider.value === 0) {
+    if (speedSlider.value === "0") {
         chrome.storage.sync.set({"spinSpeed": 0}, () => {
             root.style.setProperty("--spin-duration", "0s");
         });
