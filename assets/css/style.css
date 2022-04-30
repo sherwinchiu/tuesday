@@ -21,9 +21,8 @@
 #options-img:hover {
     opacity: .75;
 }
-body {
-    width: 200px;
-    height: 300px;
-    font-family: "Comic Sans MS";
-    background-color: rgb(var(--red), var(--green), var(--blue));
+body,* {
+
+    font-family: "Comic Sans MS" !important;
+    background-color: rgb(var(--red), var(--green), var(--blue)) !important;
 }
