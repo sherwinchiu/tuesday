@@ -27,5 +27,7 @@ chrome.contextMenus.onClicked.addListener(function(clicked) {
                 message: `Added ${clicked.selectionText}`
             });
         });
+    } else if(clicked.menuItemId == "tuesday-extension-add-event-to-calendar") {
+        chrome.tabs.create({url: `https://www.google.com/calendar/render?action=TEMPLATE&text=${clicked.selectionText}`});
     }
 });
