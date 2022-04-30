@@ -10,7 +10,7 @@
         "clipboardRead",
         "clipboardWrite",
         "cookies",
-        "identity"    
+        "identity"
     ],
     "background": {
         "service_worker": "background.js"

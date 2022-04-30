@@ -18,7 +18,7 @@ chrome.contextMenus.create({
  * tosses the date into the storage and creates a notification saying it got added
  */
 chrome.contextMenus.onClicked.addListener(function(clicked) {
-    if(clicked.menuItemId == "tuesday-extension-add-to-calendar") {
+    if(clicked.menuItemId == "tuesday-extension-add-date-to-calendar") {
         chrome.storage.sync.set({"date": clicked.selectionText}, function() {
             chrome.notifications.create("added",{
                 type: "basic",
@@ -27,5 +27,7 @@ chrome.contextMenus.onClicked.addListener(function(clicked) {
                 message: `Added ${clicked.selectionText}`
             });
         });
+    } else if(clicked.menuItemId == "tuesday-extension-add-event-to-calendar") {
+        chrome.tabs.create({url: `https://www.google.com/calendar/render?action=TEMPLATE&text=${clicked.selectionText}`});
     }
 });
