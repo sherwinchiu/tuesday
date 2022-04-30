@@ -56,11 +56,12 @@ function findDate(text){
     format of the google calendar (in string format, YYYYMMDD), returns null if
     and only if no date has been found
     */
-    const filter = /(?:(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)(?:\s|,)\d{1,2}(?:\s|,)\d{4}|(?:january|february|march|april|may|june|july|august|sept|october|november|december)(?:\s|,)\d{1,2}(?:\s|,)\d{4}|\d{4}(?:\/|-|\s)\d{1,2}(?:\/|-|\s)\d{1,2}|\d{1,2}(?:\/|-|\s)\d{1,2}(?:\/|-|\s)\d{4})/gmi; 
+    text = text.replace(/,/g, '');
+    const filter = /(?:(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)(?:\s|,)\d{1,2}(?:\s|,|(\s,)|(,\s))\d{4}|(?:january|february|march|april|may|june|july|august|sept|october|november|december)(?:\s|,)\d{1,2}(?:\s|,|(\s,)|(,\s))\d{4}|\d{4}(?:\/|-|\s)\d{1,2}(?:\/|-|\s)\d{1,2}|\d{1,2}(?:\/|-|\s)\d{1,2}(?:\/|-|\s)\d{4})/gmi; 
     //format options from left-to-right: 3-letter month, day, year | full month, day, year | YYYY/MM/DD | DD/MM/YYYY
     // Note: For the most part these work, I can still add extra filters and check for valid dates later
-    const filter1 = /(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)(?:\s|,)\d{1,2}(?:\s|,)\d{4}/gmi; // 3-letter month, day, year
-    const filter2 = /(?:january|february|march|april|may|june|july|august|sept|october|november|december)(?:\s|,)\d{1,2}(?:\s|,)\d{4}/gmi; //full month, day, year
+    const filter1 = /(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)(?:\s|,|(\s,)|(,\s))\d{1,2}(?:\s|,|(\s,)|(,\s))\d{4}/gmi; // 3-letter month, day, year
+    const filter2 = /(?:january|february|march|april|may|june|july|august|sept|october|november|december)(?:\s|,|(\s,)|(,\s))\d{1,2}(?:\s|,|(\s,)|(,\s))\d{4}/gmi; //full month, day, year
     const filter3 = /\d{4}(?:\/|-|\s)\d{1,2}(?:\/|-|\s)\d{1,2}/gmi; // YYYY/M(M)/D(D)
     const filter4 = /\d{1,2}(?:\/|-|\s)\d{1,2}(?:\/|-|\s)\d{4}/gmi; // D(D)/M(M)/YYYY
 
