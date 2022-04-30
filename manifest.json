@@ -44,7 +44,7 @@
     },
     "content_scripts": [{
       "matches": ["https://www.google.com/*", "https://calendar.google.com/calendar/*", "<all_urls>"],
-      "css": ["assets/css/style.css"],
+      "css": ["assets/css/style.css", "assets/css/spin.css"],
       "js": ["assets/js/colours.js"]
     }],
     "options_page": "options.html"
