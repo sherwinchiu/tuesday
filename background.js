@@ -26,11 +26,15 @@ chrome.contextMenus.onClicked.addListener((clicked) => {
                 title: "Added an Event",
                 message: `Added ${clicked.selectionText}`
             });
-            chrome.tabs.create({url: `https://calendar.google.com/calendar/u/0/r/eventedit?text=Your+Event+Name&dates=${findDate(clicked.selectionText)}/${parseInt(findDate(clicked.selectionText))+1}`})
+            chrome.storage.sync.get(["event"], (event) => {
+                chrome.tabs.create({url: `https://calendar.google.com/calendar/u/0/r/eventedit?text=${event.event}&dates=${findDate(clicked.selectionText)}/${parseInt(findDate(clicked.selectionText))+1}`});
+            });
         });
     } else if(clicked.menuItemId == "tuesday-extension-add-event-to-calendar") {
         chrome.storage.sync.set({"event": clicked.selectionText}, () => {
-            chrome.tabs.create({url: `https://www.google.com/calendar/render?action=TEMPLATE&text=${clicked.selectionText}`});
+            chrome.storage.sync.get(["date"], (event) => {
+                chrome.tabs.create({url: `https://www.google.com/calendar/render?action=TEMPLATE&text=${clicked.selectionText}&dates=${event.date}/${parseInt(event.date)+1}`});
+            });
         });
     }
 });
@@ -38,7 +42,7 @@ chrome.contextMenus.onClicked.addListener((clicked) => {
 chrome.commands.onCommand.addListener((command) => {
     if (command == "add_event") {
         chrome.storage.sync.get(["event", "date"], (event) => {
-            chrome.tabs.create({url: `https://www.google.com/calendar/render?action=TEMPLATE&text=${event.event}`});
+            chrome.tabs.create({url: `https://www.google.com/calendar/render?action=TEMPLATE&text=${event.event}&dates=${event.date}/${parseInt(event.date)+1}`});
             chrome.notifications.create("added",{
                 type: "basic",
                 iconUrl:"/assets/img/48x48 logo.png",
