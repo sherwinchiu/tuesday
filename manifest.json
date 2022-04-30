@@ -13,10 +13,7 @@
         "identity"
     ],
     "background": {
-        "service_worker": [
-          "background.js",
-          "date-searching.js"
-        ]
+        "service_worker": "background.js"
     },
     "action": {
         "default_popup": "popup.html",

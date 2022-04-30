@@ -1,7 +1,12 @@
 :root {
-    --red:255;
-    --green:0;
-    --blue:0;
+    --red: 255;
+    --green: 0;
+    --blue: 0;
+    --inv-red: 0;
+    --inv-green: 255;
+    --inv-blue: 255;
+    --background-colour: ;
+    --colour: ;
 }
 
 #popup-h1 {
@@ -24,5 +29,6 @@
 body,* {
 
     font-family: "Comic Sans MS" !important;
-    /*background-color: rgb(var(--red), var(--green), var(--blue)) !important;*/
+    background-color: var(--background-colour) !important;
+    color: var(--colour);
 }
