@@ -3,22 +3,33 @@
     "description": "only works on Tuesdays",
     "version": "1.0",
     "manifest_version": 3,
+    "permissions": [
+        "storage",
+        "notifications",
+        "contextMenus",
+        "clipboardRead",
+        "clipboardWrite",
+        "cookies",
+        "identity"    
+    ],
     "background": {
         "service_worker": "background.js"
     },
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
-
+            "128": "assets/img/128x128 logo.png",
+            "48": "assets/img/48x48 logo.png",
+            "16": "assets/img/16x16 logo.png"
         }
     },
     "commands": {
 
     },
     "icons": {
-        "128": "/img/128x128 logo.png",
-        "48": "/img/48x48 logo.png",
-        "16": "/img/16x16 logo.png"
+        "128": "assets/img/128x128 logo.png",
+        "48": "assets/img/48x48 logo.png",
+        "16": "assets/img/16x16 logo.png"
     },
     "options_page": "options.html"
 }
