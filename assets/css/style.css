@@ -1,3 +1,9 @@
+:root {
+    --red:255;
+    --green:0;
+    --blue:0;
+}
+
 #popup-h1 {
     color: #A75675;
     display: block;
@@ -18,4 +24,5 @@ body {
     width: 200px;
     height: 300px;
     font-family: "Comic Sans MS";
+    background-color: rgb(var(--red), var(--green), var(--blue));
 }
