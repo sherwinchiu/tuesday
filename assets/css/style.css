@@ -1,3 +1,21 @@
-h1 {
-    color: red;
+#popup-h1 {
+    color: #A75675;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+.options {
+    position: relative;
+    top: 75px;
+    display: block;
+    width: 24px;
+    padding: 2px;
+}
+#options-img:hover {
+    opacity: .75;
+}
+body {
+    width: 200px;
+    height: 300px;
+    font-family: "Comic Sans MS";
 }
