@@ -6,8 +6,10 @@
     <script src="/assets/js/colours.js"></script>
     <title>tuesday</title>
 </head>
-<body>
+<body onload="loadInfo()">
     <h1 id="popup-h1">tuesday</h1>
+    <p>Current event name: <p id="event-name"></p></p>
+    <p>Current event date: <p id="event-date"></p></p>
     <a class="options" id="options-link" href="options.html" target="_blank"> 
         <div class="options" id="options-button">
             <img class="options" id="options-img" src="assets/img/settings cog.png">
@@ -15,3 +17,4 @@
     </a>
 </body>
 </html>
+<script src="popup.js"></script>
