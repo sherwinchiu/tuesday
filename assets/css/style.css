@@ -23,7 +23,7 @@
     width: 24px;
     padding: 2px;
 }
-#options-img:hover {
+#options-img:hover, #set-options:hover, #bg-col:hover {
     opacity: .75;
 }
 body,* {
@@ -31,4 +31,16 @@ body,* {
     font-family: "Comic Sans MS" !important;
     background-color: var(--background-colour) !important;
     color: var(--colour);
+}
+#options-body{
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+#set-options{
+    display: block;
+    position: relative;
+    top: 50px;
+    margin: 0 auto;
 }
